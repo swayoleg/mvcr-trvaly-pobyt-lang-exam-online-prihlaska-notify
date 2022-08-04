@@ -10,10 +10,71 @@ So what I did its just simple parser that checks free spot and notifies you.
 
 The notification can be done via telegram, email and webhook.
 There is two type(styles I would say) to solve the problem. 
-In noOOPJustForFunExample.php you just put the telegram token and chat id - and put the script on a cron.
+In <a href="https://github.com/swayoleg/mvcr-trvaly-pobyt-lang-exam-online-prihlaska-notify/blob/master/noOOPJustForFunExample.php">noOOPJustForFunExample.php</a> you just put the telegram token and chat id - and put the script on a cron.
 This is my style to solve one-time issues - just get it done.
 
 BUT its not a cool and corporate style - right? So real "for fun" was to create script that can send notification with different type, can operate via guzzle or curl by config, can be extended - bla bla bla.
+
+
+## Installation
+
+Composer
+```
+composer require swayoleg/mvcr-trvaly-pobyt-lang-exam-online-prihlaska-notify
+```
+
+Then use parser_example.php
+
+```php
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+$configExample = [
+    'notify' => [
+        'telegram',
+        //'email',
+        //'webhook'
+    ],
+    'notify_options' => [
+        'telegram' => [
+            // can be a lot of chats
+            'chats' => [
+                '%YOURCHATIDHERE%',
+                '%YOURCHATIDHERE%'
+            ],
+            'token' => '%TELEGRAMTOKEN%', //
+        ],
+        'email' => [
+            // can be multiply
+            'sendTo' => [
+                'email@cc.cc'
+            ],
+            'subject' => 'New exam spot',
+            'from' => 'webmaster@example.com',
+            'replyTo' => 'webmaster@example.com',
+        ],
+        'webhook' => [
+            // Can be a lot of urls
+            'urls' => [
+                '%YOUR URL HERE%'
+            ]
+        ]
+    ],
+
+    'url' => 'https://cestina-pro-cizince.cz/trvaly-pobyt/a2/online-prihlaska/',
+    'noTermsText' => 'Obsazeno',
+    'downloader' => 'curl',  // Can be "guzzle", "file" or "curl"
+    'domParser' => 'xpath',
+    'sendNotificationIfNoElementsFound' => false, // This will notify you if there is no disabled links found - for example in case if DOM scruture is changed.
+    'message' => 'New Exam place Exists!' . PHP_EOL . 'Go for it: https://cestina-pro-cizince.cz/trvaly-pobyt/a2/online-prihlaska/', // Message to send
+    'errorMessage' => 'No xpath elements found',
+];
+
+$checker = new \Swayoleg\CestinaCheck\OnlinePrihlaskaChecker($configExample);
+$checker->check();
+```
+
+
 
 So if you are novice in this lets go with config. Use parser_example.php file.
 
@@ -67,7 +128,7 @@ Lang: en
 In the nnnnnnnn place you will get your *chat Id* for config.
 
 
-So send config like this:
+So set config like this:
 
 ```php
 $configExample = [
@@ -113,7 +174,7 @@ Other Options:
 
 *domParser* - leave it for now. If you want another parser add it to src/Dom and implement Swayoleg\CestinaCheck\Dom\ParserInterface
 
-*downloader* - if you use file it uses simple file_get_contents php function - so url open should be allowed. curl uses ext-curl and guzzle use guzzlehttp/guzzle package
+*downloader* - if you use file it uses simple file_get_contents php function - so url open should be allowed. curl uses ext-curl and guzzle use <a href="https://github.com/guzzle/guzzle/">guzzlehttp/guzzle</a> package
 
 *noTermsText* - the btn has Obsazeno vlue - if not you will get notification that spot is there and you can book it
 
