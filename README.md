@@ -23,7 +23,30 @@ Composer
 composer require swayoleg/mvcr-trvaly-pobyt-lang-exam-online-prihlaska-notify
 ```
 
-Then use parser_example.php
+
+## Coffee
+
+    If you want to by me a coffee - just do it:
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/swayoleg)
+
+## Usage
+
+### I like to use it like this
+
+```apacheconf
+
+<?php
+require_once __DIR__ . '/vendor/autoload.php';
+
+$config = include (__DIR__ . DIRECTORY_SEPARATOR . 'config.php');
+$checker = new \Swayoleg\CestinaCheck\OnlinePrihlaskaChecker($config);
+$checker->check();
+```
+
+where config.php looks like this - <a href="https://github.com/swayoleg/mvcr-trvaly-pobyt-lang-exam-online-prihlaska-notify/blob/master/config_example.php">config_example.php</a>
+
+Or use the parser_example.php
 
 ```php
 
@@ -73,7 +96,6 @@ $configExample = [
 $checker = new \Swayoleg\CestinaCheck\OnlinePrihlaskaChecker($configExample);
 $checker->check();
 ```
-
 
 
 So if you are novice in this lets go with config. Use parser_example.php file.
@@ -181,9 +203,3 @@ Other Options:
 ### Multiply notifications
 
 Yes it works. You can use webhook email and telegram notification types same time, and multipy urls, chats and emails as well.
-
-## Coffee
-
-    If you want to by me a coffee - just do it:
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/swayoleg)
