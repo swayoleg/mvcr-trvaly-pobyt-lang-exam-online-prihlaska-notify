@@ -77,7 +77,7 @@ $configExample = [
     'notify_options' => [
         'telegram' => [
             'chats' => [
-                *chat Id*
+                *chat Id*, // TELEGRAM int chat ID here
             ],
             'token' => '*token*', // TELEGRAM TOKEN HERE
         ],
@@ -107,9 +107,9 @@ Other Options:
 
 *url* - the actually url for parsing
 
-*errorMessage* - what should we send if xPath didnt find any links. Works only with sendNotificationIfNoElementsFound
+*errorMessage* - what should we send if xPath didnt find any links. Works only with *sendNotificationIfNoElementsFound* = true
 
-*sendNotificationIfNoElementsFound* - flag if we need to send message if parser cant find the links
+*sendNotificationIfNoElementsFound* - flag if we need to send message if parser cant find the links at all (I mean document structure might be changed)
 
 *domParser* - leave it for now. If you want another parser add it to src/Dom and implement Swayoleg\CestinaCheck\Dom\ParserInterface
 
