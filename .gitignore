@@ -1,0 +1,12 @@
+vendor/
+/vendor/
+vendor/*
+composer.phar
+composer.lock
+infection.log
+.idea/
+.php_cs.cache
+*.swp
+config.php
+noOOPJustForFunExampleOleg.php
+parser_example_oleg.php

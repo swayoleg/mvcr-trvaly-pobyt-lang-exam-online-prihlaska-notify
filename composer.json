@@ -1,0 +1,29 @@
+{
+  "name": "swayoleg/mvcr-trvaly-pobyt-lang-exam-online-prihlaska-notify",
+  "type": "library",
+  "description": "Checks if at https://cestina-pro-cizince.cz/trvaly-pobyt/a2/online-prihlaska/ are free spots and notifies",
+  "keywords": ["mvcr", "online-prihlaska","cestina-pro-cizince", "parser", "cheker"],
+  "homepage": "https://github.com/swayoleg/mvcr-trvaly-pobyt-lang-exam-online-prihlaska-notify",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Oleg Ovsianikov",
+      "email": "swayoleg@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "ext-curl": "*",
+    "ext-dom": "*",
+    "guzzlehttp/guzzle": "^7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Swayoleg\\CestinaCheck\\": "src"
+    }
+  },
+  "require-dev": {
+    "phan/phan": "^5.3",
+    "phpunit/phpunit": "^9.5"
+  }
+}
