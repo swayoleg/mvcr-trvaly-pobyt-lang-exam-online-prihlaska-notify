@@ -19,7 +19,7 @@ $exists = false;
 echo 'Total Elements: ' . $elements->length . PHP_EOL;
 foreach ($elements as $element) {
     $txt = trim($element->textContent);
-    if ($txt != 'Obsazeno') {
+    if ($txt != 'Obsazeno' && $txt != 'Nedostupná') {
         $exists = true;
     }
 }

@@ -13,7 +13,7 @@ class XpathParser implements ParserInterface {
 
     public const XPATH_HREFS = "//div[@id='registration-wrap']/div[@class='card-body']/ul/li/div[@class='row']/div[contains(@class, 'text-right')]/a";
 
-    public function hasFreeSpots(string $content, $wordToCheck = 'Obsazeno'): bool
+    public function hasFreeSpots(string $content, array $wordToCheck = ['Obsazeno', 'Nedostupná']): bool
     {
         // Dont you mind that Im using dirty hacks for utf-8 ?
         $doc = new DOMDocument('1.0', 'UTF-8');
@@ -27,7 +27,7 @@ class XpathParser implements ParserInterface {
         // 'Total Elements: ' . $elements->length . PHP_EOL;
         foreach ($elements as $element) {
             $txt = trim($element->textContent);
-            if ($txt != $wordToCheck) {
+            if (!in_array($txt, $wordToCheck)) {
                 $exists = true;
                 break;
             }

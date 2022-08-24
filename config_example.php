@@ -2,7 +2,7 @@
 
 return [
     'url' => 'https://cestina-pro-cizince.cz/trvaly-pobyt/a2/online-prihlaska/',
-    'noTermsText' => 'Obsazeno',
+    'noTermsText' => ['Nedostupná', 'Obsazeno'],
     'downloader' => 'curl',  // Can be guzzle, file or curl
     'domParser' => 'xpath',
     'message' => 'New Exam place Exists!' . PHP_EOL . 'Go for it: https://cestina-pro-cizince.cz/trvaly-pobyt/a2/online-prihlaska/',

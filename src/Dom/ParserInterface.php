@@ -6,7 +6,7 @@ namespace Swayoleg\CestinaCheck\Dom;
 
 interface ParserInterface {
 
-    public function hasFreeSpots(string $content, string $wordToCheck = 'Obsazeno'): bool;
+    public function hasFreeSpots(string $content, array $wordToCheck = ['Obsazeno', 'Nedostupná']): bool;
 
     public function hasDisabledLinks(): bool;
 

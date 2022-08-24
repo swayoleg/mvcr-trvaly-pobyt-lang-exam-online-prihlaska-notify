@@ -85,7 +85,7 @@ $configExample = [
     ],
 
     'url' => 'https://cestina-pro-cizince.cz/trvaly-pobyt/a2/online-prihlaska/',
-    'noTermsText' => 'Obsazeno',
+    'noTermsText' => ['Nedostupná', 'Obsazeno'],
     'downloader' => 'curl',  // Can be "guzzle", "file" or "curl"
     'domParser' => 'xpath',
     'sendNotificationIfNoElementsFound' => false, // This will notify you if there is no disabled links found - for example in case if DOM scruture is changed.
@@ -120,7 +120,7 @@ $configExample = [
     'errorMessage' => 'No xpath elements found',
     
     'url' => 'https://cestina-pro-cizince.cz/trvaly-pobyt/a2/online-prihlaska/',
-    'noTermsText' => 'Obsazeno',
+    'noTermsText' => ['Nedostupná', 'Obsazeno'],
     'downloader' => 'curl',  // Can be "guzzle", "file" or "curl"
     'domParser' => 'xpath',
 ];
@@ -172,7 +172,7 @@ $configExample = [
     
     
     'url' => 'https://cestina-pro-cizince.cz/trvaly-pobyt/a2/online-prihlaska/',
-    'noTermsText' => 'Obsazeno',
+    'noTermsText' => ['Nedostupná', 'Obsazeno'],
     'downloader' => 'curl',  // Can be "guzzle", "file" or "curl"
     'domParser' => 'xpath',
 ];
@@ -198,8 +198,13 @@ Other Options:
 
 *downloader* - if you use file it uses simple file_get_contents php function - so url open should be allowed. curl uses ext-curl and guzzle use <a href="https://github.com/guzzle/guzzle/">guzzlehttp/guzzle</a> package
 
-*noTermsText* - the btn has Obsazeno vlue - if not you will get notification that spot is there and you can book it
+*noTermsText* - Text on the btn which means that there is no terms. Array param from 1.0.1 version
 
 ### Multiply notifications
 
 Yes it works. You can use webhook email and telegram notification types same time, and multipy urls, chats and emails as well.
+
+
+## ChangeLog
+
+1.0.1  *noTermsText* param changed from string to array
