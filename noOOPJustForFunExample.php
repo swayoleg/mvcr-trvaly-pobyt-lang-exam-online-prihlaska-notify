@@ -44,7 +44,7 @@ if ($exists) {
             curl_close($ch);
 
         } catch (Exception $e) {
-
+            echo $e->getMessage() . PHP_EOL;
         }
     }
 }
