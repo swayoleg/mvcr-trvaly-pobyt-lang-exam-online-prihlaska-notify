@@ -1,3 +1,5 @@
+#DEPRECATED. Use just as example reference
+
 # What is it project for?
 
 In Czech republic to get permanent visa you need to get language exam. 
