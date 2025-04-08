@@ -1,4 +1,4 @@
-#DEPRECATED. Use just as example reference
+# DEPRECATED. Use just as example reference
 
 # What is it project for?
 
