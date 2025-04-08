@@ -1,4 +1,9 @@
-# DEPRECATED. Use just as example reference
+# DEPRECATED. 
+
+## Use just as example reference
+
+
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 # What is it project for?
 
