@@ -30,12 +30,7 @@ Composer
 composer require swayoleg/mvcr-trvaly-pobyt-lang-exam-online-prihlaska-notify
 ```
 
-
-## Coffee
-
-    If you want to by me a coffee - just do it:
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/swayoleg)
+ 
 
 ## Usage
 
